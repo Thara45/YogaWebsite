@@ -1,0 +1,74 @@
+// COLOR VARIABLES
+/*$color-primary: #c69963;*/
+$color-primary:#6c1555;
+$color-primary-1: #c496ba;
+$color-primary-light:#7a1860;
+$color-primary-lightest:#eda4d9;
+
+$color-secondary: #101d2c;
+$color-header:#6e8988;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+$color-hover:#cf9005;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+//Responsive Breakpoints
+
+$bp-largest: 75em; //1200px
+$bp-large:62.5em; //1000px
+$bp-medium:50em;//800px
+$bp-small:37.5em; //600px
+$bp-smallest:31.25em; //500px
+$bp-ipad:64em;
+$bp-iphone:25em;
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //10/16 = 62.5%; 1rem=10px;
+
+    @media only screen and (max-width: $bp-largest){
+        font-size: 50%;
+    }
+
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+   display: grid;
+   grid-template-rows: 96vh repeat(3, min-content) 40vw min-content;
+   grid-template-columns: [sidebar-start] 6rem [sidebar-end full-start] minmax(5rem,1fr) [center-start] 
+   repeat(8, [col-start]minmax(min-content,12rem)[col-end])[center-end] minmax(5rem,1fr) [full-end];
+
+   @media only screen and (max-width: $bp-small){
+        grid-template-rows: 70vh repeat(3, min-content) 80vw min-content;
+    }
+    @media only screen and (max-width: $bp-smallest){
+        grid-template-rows: 70vh repeat(3, min-content) 120vw min-content;
+    }
+    @media only screen and (max-width: $bp-iphone){
+        grid-template-rows: 65vh repeat(4, min-content) 175vw min-content;
+    }
+  }
+
